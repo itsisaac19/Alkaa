@@ -1,2 +1,2 @@
 # Lista
-A to do list app.
+Simplicity and ease without all of the clutter. Enter the Lista. 
