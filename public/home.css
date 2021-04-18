@@ -1,0 +1,211 @@
+@font-face {
+    font-family: 'moniqa';
+    src: url('Fonts/moniqa-variable.ttf') format('truetype')
+}
+
+body {
+    background: hsl(41, 38%, 92%);
+    overflow-x: hidden;
+
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+html {
+    height: -webkit-fill-available;
+}
+
+.outerwrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+}
+.top-bar {
+    height: 120px;
+    display: grid;
+}
+.top-bar > h1 {
+    color: #424242;
+    margin: auto auto 10px 10%;
+
+    font-size: 3em;
+    font-family: moniqa;
+    font-variation-settings: 'wght' 700, 'wdth' 100, 'opsz' 50;
+}
+
+.outerwrap > .bodycontent {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:auto;
+}
+
+.taskcontainer {
+    margin: 37.5px 10%;
+    
+    height: min-content;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 20px;
+}
+
+.taskcontainer.mobile > .task-list-item > .taskDetails > .taskTitle  {
+    font-family: hk_groteskbold;
+}
+
+.taskcontainer > label.Today {
+    font-family: Stolzl;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+.taskcontainer > label.Today {
+    color: #AF9D65;
+}
+
+.task-list-item {
+    border-radius: 1.1em;
+    background-color: #FCF8EA;
+
+    font-family: hk_groteskregular;
+    font-size: 0.9em;
+
+    display: grid;
+
+    transition: box-shadow 0.2s ease;
+}
+
+.task-list-item.active {
+    box-shadow: 0 0 0 2px #e6ddc7;
+}
+
+.task-list-item.noDesc{
+    height: 82px;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.taskDetails {
+    margin: 23px 24px;
+
+    display: grid;
+    row-gap: 10px;
+}
+
+.taskTitle {
+    font-family: hk_groteskmedium;
+    color: #454545;
+}
+.taskDesc {
+    font-weight: 300;
+    color: #b5b5aa;
+}
+.spacer {
+    position: absolute;
+    left: 0;
+    bottom: -40%;
+    width: 10px;
+    height: 10px;
+}
+
+
+.taskViewContainer {
+    touch-action: none;
+
+    position: fixed;
+    bottom: -5%;
+    width: 100%;
+    height: 60%;
+
+    opacity: 0;
+    
+    border-radius: 2rem 2rem 0 0;
+    background-color: #F8F5EF;
+    box-shadow: 0px 3px 26px rgba(0, 0, 0, 0.123);
+
+    display: none;
+    grid-template-rows: min-content min-content min-content;
+    grid-template-columns: 1fr;
+
+    transition: bottom ease 0.3s, opacity ease 0.3s;
+}
+.taskViewContainer.shown {
+    transition: bottom ease 0.3s, opacity ease 0.2s;
+    opacity: 1;
+    bottom: 0;
+}
+
+.taskViewTitle {
+    color: #484848;
+    margin: 38px 38px 0px 38px;
+
+    font-size: 3em;
+    font-family: moniqa;
+    font-variation-settings: 'wght' 700, 'wdth' 100, 'opsz' 50;
+}
+
+.descWrapper {
+    margin: 38px;
+}
+.descLabel {
+    font-family: hk_groteskbold;
+    color: #B2A681;
+}
+.taskViewDesc {
+    margin-top: 10px;
+    font-family: hk_groteskregular;
+    color: #6C6C6C;
+}
+
+.actions-container {
+    margin: 20px 38px 0 38px;
+    display: grid;
+    grid-template-columns: min-content auto min-content;
+    grid-template-rows: 1fr;
+}
+.doneButton {
+    font-family: hk_groteskbold;
+
+    cursor: pointer;
+    color: #654F12;
+
+    border-radius: 1rem;
+    background-color: #E8DBB7;
+    box-shadow: 0px 3px 26px #d9ab2336;
+
+    height: 50px;
+    width: 90%;
+
+    margin: 0 auto;
+
+    display: grid;
+    place-items: center;
+
+    transform: scale(1, 1);
+    transition: transform 0.2s;
+}
+.doneButton:active {
+    transform: scale(0.97, 0.97);
+}
+
+.actions-container > .material-icons {
+    font-size: 30px;
+}
+.actions-container > .material-icons.done_all {
+    margin: auto 0 auto 20px;
+    color: #405819;
+}
+.actions-container > .material-icons.delete {
+    margin: auto 20px auto 0;
+    color: #DBC4B0;
+}

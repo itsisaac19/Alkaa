@@ -1,0 +1,102 @@
+
+@font-face {
+    font-family: 'moniqa';
+    src: url('Fonts/moniqa-variable.ttf') format('truetype')
+}
+
+
+body {
+    background: hsl(41, 38%, 92%);
+    overflow: hidden;
+}
+
+body > div.main-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    height: min-content;
+    width: calc(100% - 20%);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+h1.Alkaa {
+    grid-area: 1/1/1/1;
+
+    font-size: 7em;
+    font-family: moniqa;
+    font-weight: 500;
+    font-variation-settings: 'wght' 600, 'wdth' 90, 'opsz' 100;
+
+    color: #484848;
+    margin: auto auto 100px auto;
+}
+
+
+body > div.main-content > p {
+    grid-area: 1/1/1/1;
+
+    font-family: stolzl, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    text-align: center;
+
+    color: #766F57;
+
+    margin: auto auto 50px auto;
+}
+
+
+.buttonswrap {
+    grid-area: 2/1/4/1;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+
+    height: min-content;
+
+    font-family: stolzl, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+}
+.buttonswrap > div.button {
+    cursor: pointer;
+    margin: 0 auto;
+
+    height: 47px;
+    width: 50%;
+    min-width: 190px;
+    max-width: 220px;
+
+    border-radius: 18px;
+
+    display: grid;
+    place-items: center;
+    transition: 0.3s ease;
+}
+.learnmore {
+    color: #A09063;
+    background-color: #FCF8EA;
+    box-shadow: 0px 3px 26px #D0C0921A;
+}
+.start {
+    color: #654F12;
+    background-color:#E8DBB7;
+    box-shadow: 0px 3px 26px #D9AA2327;
+}
+
+.learnmore:hover {
+    box-shadow: 0px 3px 26px #d0c19238;
+}
+.start:hover {
+    box-shadow: 0px 3px 26px #d9ab233f;
+}
