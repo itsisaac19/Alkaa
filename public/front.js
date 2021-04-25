@@ -17,6 +17,22 @@ function assignAllClickEvents () {
   document.addEventListener('swiped-down', function(e) {
     swipeHandler(e.target)
   });
+
+  document.querySelectorAll('.task-select').forEach(function(ts) {
+    ts.addEventListener('input', function() {
+      checkedTaskSelectHandler(this);
+    })
+  })
+}
+
+function checkedTaskSelectHandler (input) {
+  console.log("clicked input")
+  console.log(input.checked)
+
+  var parent = input.parentElement.parentElement.parentElement;
+
+  if (input.checked == false) return parent.classList.remove('checked');
+  if (input.checked == true) return parent.classList.add('checked');
 }
 
 function taskClickHandler () {
@@ -36,11 +52,13 @@ function taskClickHandler () {
 
   setTimeout(function() {
     viewTask(taskId, title, description);
-    log(title)
   }, 301)
+
 }
 
-function viewTask (el, id, title, description) {
+function viewTask (data_id, id, title, description) {
+
+
   var cont = document.querySelector('.taskViewContainer')
   cont.style.display = 'grid'
 
